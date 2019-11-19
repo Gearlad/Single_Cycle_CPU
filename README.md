@@ -6,6 +6,11 @@ Verilog implementation of a single cycle CPU, including a driver module, a CPU m
 
 -----
 
+**Compilation**: iverilog *.v <br>
+Equivalent to command: iverilog testbench.v CPU.v Adder.v Control.v PC.v Instruction_Memory.v Registers.v MUX32.v Sign_Extend.v ALU.v ALU_Control.v<br>
+**Execution**: ./a.out <br>
+Output printed to the console will be written to output.txt
+
 ## Verilog Files
 
 ### Testbench.v
