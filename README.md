@@ -42,8 +42,19 @@ Verilog implementation of a single cycle CPU, including a driver module, a CPU m
 - The extension is executed by copying the leftmost bit of data_i to the leftmost 20 bits of data_o [31:11], while also copying all bits of data_i to the right [11:0].
 
 ### ALU.v
+The ALU has two outputs; one is the zero output, and the other is the result of the operation performed. Operations for the two 32-bit inputs (data1_i and data2_i) are executed based on the value set from ALU_Control.
 
 ### ALU_Control.v
+I set the operation codes to have the following values.
+- and: 001
+- or: 010
+- add: 011
+- sub: 100
+- mul: 101
+- addi: 110
+
+- nop (default case): 000
+- unused:111
 
 ----
 
