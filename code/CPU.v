@@ -99,7 +99,7 @@ ALU ALU(
 );
 
 ALU_Control ALU_Control(
-    .funct_i    ({curr_instr[30], curr_instr[14:12]}),
+    .funct_i    ({curr_instr[31:25], curr_instr[14:12]}),
     .ALUOp_i    (Ctrl_ALUOp_o),
     .ALUCtrl_o  (ALUCtrl_o)
 );

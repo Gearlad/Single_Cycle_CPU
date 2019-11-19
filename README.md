@@ -11,8 +11,7 @@ Verilog implementation of a single cycle CPU, including a driver module, a CPU m
 ### Testbench.v
 
 - The main 'driver' file for this implementation is the provided *testbench.v*. This file is responsible for initializing both the instruction memory and the register file to default 32-bit binary zero values, also handling resets, starting and ending the simulation, and accessing input (instruction.txt) and writing (output.txt) files.
-- CYCLE_TIME, defined in the pre-compiler, is set to 50, meaning that
-- 
+- CYCLE_TIME, defined in the pre-compiler, is set to 50.
 
 ### CPU.v
 
@@ -39,6 +38,8 @@ Verilog implementation of a single cycle CPU, including a driver module, a CPU m
 ### MUX5.v
 
 ### Sign_Extend.v
+- Designed to extend the 12-bit input(data_i) into a 32-bit output(data_o).
+- The extension is executed by copying the leftmost bit of data_i to the leftmost 20 bits of data_o [31:11], while also copying all bits of data_i to the right [11:0].
 
 ### ALU.v
 
