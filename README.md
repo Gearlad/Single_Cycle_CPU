@@ -27,17 +27,16 @@ For control, naturally there is one input (the operation), and three outputs (AL
 This CPU's instruction memory is 256 bits, and each 32-bit instruction is accessed based on its assigned 32-bit address.
 
 ### Registers.v
-
+RSdata_o will be updated to the value of the register of address RSaddr_i, and likewise with RTdata_o/RTaddr_i. Activated asynchronously and when RegWrite is true (always true in this case), the register of the specified address in the input will be updated to the value of RDdata_i.
 
 ### MUX32.v
-
+With three inputs, the select bit will determine whether data1 (Register Read Data 2) or data2 (Sign Extend output) is selected, and its output is sent to the CPU.
 
 ### MUX5.v
 Unused
 
 ### Sign_Extend.v
-- Designed to extend the 12-bit input(data_i) into a 32-bit output(data_o).
-- The extension is executed by copying the leftmost bit of data_i to the leftmost 20 bits of data_o [31:11], while also copying all bits of data_i to the right [11:0].
+This module is designed to extend the 12-bit input(data_i) into a 32-bit output(data_o). The extension is executed by copying the leftmost bit of data_i to the leftmost 20 bits of data_o [31:11], while also copying all bits of data_i to the right [11:0] bits.
 
 ### ALU.v
 The ALU has two outputs; one is the zero output, and the other is the result of the operation performed. Operations for the two 32-bit inputs (data1_i and data2_i) are executed based on the value set from ALU_Control.

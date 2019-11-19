@@ -14,5 +14,4 @@ always@(data1_i or data2_i or select_i) begin
 	end
 end
 
-
 endmodule
