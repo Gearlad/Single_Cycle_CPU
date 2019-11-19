@@ -49,13 +49,13 @@ The ALU has two outputs; one is the zero output, and the other is the result of 
 ### ALU_Control.v
 I set the operation codes to the following values.<br>
 
-*and*: 001
-*or*: 010
-*add*: 011
-*sub*: 100
-*mul*: 101
-*addi*: 110
-*nop (default case)*: 000
+*and*: 001<br>
+*or*: 010<br>
+*add*: 011<br>
+*sub*: 100<br>
+*mul*: 101<br>
+*addi*: 110<br>
+*nop (default case)*: 000<br>
 *unused*: 111
 
 ----
