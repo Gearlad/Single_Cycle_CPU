@@ -6,9 +6,11 @@ module CPU
 );
 
 // Ports
-input               clk_i;
-input               rst_i;
-input               start_i;
+input clk_i;
+input rst_i;
+input start_i;
+
+wire [31:0] curr_instr_addr, next_instr_addr, 
 
 /*
 Control Control(
@@ -20,13 +22,11 @@ Control Control(
 );
 */
 
-/*
 Adder Add_PC(
-    .data1_in   (),
-    .data2_in   (),
-    .data_o     ()
+    .data1_in   (curr_instr_addr),
+    .data2_in   (32'b100),
+    .data_o     (next_instr_addr);
 );
-*/
 
 PC PC(
     .clk_i      (),
