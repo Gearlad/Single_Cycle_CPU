@@ -42,23 +42,21 @@ This module is designed to extend the 12-bit input(data_i) into a 32-bit output(
 The ALU has two outputs; one is the zero output, and the other is the result of the operation performed. Operations for the two 32-bit inputs (data1_i and data2_i) are executed based on the value set from ALU_Control.
 
 ### ALU_Control.v
-I set the operation codes to have the following values.
-- and: 001
-- or: 010
-- add: 011
-- sub: 100
-- mul: 101
-- addi: 110
+I set the operation codes to the following values.<br>
 
-- nop (default case): 000
-- unused:111
+*and*: 001
+*or*: 010
+*add*: 011
+*sub*: 100
+*mul*: 101
+*addi*: 110
+*nop (default case)*: 000
+*unused*: 111
 
 ----
 
 ## Other Files
 
-### Instruction.txt
-The input file containing all instructions
+**Instruction.txt**: The input file containing all instructions
+**Output.txt**: The program will print the register value outputs after executing each instruction
 
-### Output.txt
-The program will print the register value outputs after executing each instruction
