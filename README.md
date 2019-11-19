@@ -9,33 +9,31 @@ Verilog implementation of a single cycle CPU, including a driver module, a CPU m
 ## Verilog Files
 
 ### Testbench.v
-
-- The main 'driver' file for this implementation is the provided *testbench.v*. This file is responsible for initializing both the instruction memory and the register file to default 32-bit binary zero values, also handling resets, starting and ending the simulation, and accessing input (instruction.txt) and writing (output.txt) files.
-- CYCLE_TIME, defined in the pre-compiler, is set to 50.
+The main 'driver' file for this implementation is the provided *testbench.v*. This file is responsible for initializing both the instruction memory and the register file to default 32-bit binary zero values, also handling resets, starting and ending the simulation, and accessing input (instruction.txt) and writing (output.txt) files. Cycle time, defined in the pre-compiler, is set to 50.
 
 ### CPU.v
-
-- CPU.v essentially links all other files in the simulated one-cycle CPU together. This file required slight modification from the provided file, with declaration of wires to connect all parts, such as the PC adder for calculating the next instruction (this is the only adder needed in the CPU file), or the I/O for the Control. They function as parameters for all declared modules.
+CPU.v essentially links all other files in the simulated one-cycle CPU together. This file required slight modification from the provided file, with declaration of wires to connect all parts, such as the PC adder for calculating the next instruction (this is the only adder needed in the CPU file), or the I/O for the Control. They function as parameters for all declared modules.
 
 ### Control.v
-
-- 
+Control naturally has one operation input, bits [6:0] of the current instruction. By default, RegWrite will be set to true, and the other two outputs (ALUOp_o and ALUSrc_o) will be toggled from Op_i. 
 
 ### Adder.v
-
-- This is perhaps the easiest to implement module; this half adder has two 32-bit input parameters which, when added together, form the 32-bit output (the address of the next instruction).
+This is perhaps the easiest to implement module; this half adder has two 32-bit input parameters which, when added together, form the 32-bit output (the address of the next instruction).
 
 ### PC.v
-
-- For control, naturally there is one input (the operation), and three outputs (ALUOp, ALUSrc, and RegWrite).
+For control, naturally there is one input (the operation), and three outputs (ALUOp, ALUSrc, and RegWrite).
 
 ### Instruction_Memory.v
+This CPU's instruction memory is 256 bits, and each 32-bit instruction is accessed based on its assigned 32-bit address.
 
 ### Registers.v
 
+
 ### MUX32.v
 
+
 ### MUX5.v
+Unused
 
 ### Sign_Extend.v
 - Designed to extend the 12-bit input(data_i) into a 32-bit output(data_o).
@@ -61,6 +59,7 @@ I set the operation codes to have the following values.
 ## Other Files
 
 ### Instruction.txt
+The input file containing all instructions
 
 ### Output.txt
-
+The program will print the register value outputs after executing each instruction
