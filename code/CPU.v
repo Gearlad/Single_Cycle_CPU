@@ -49,8 +49,8 @@ PC PC(
     .clk_i      (clk_i),
     .rst_i      (rst_i),
     .start_i    (start_i),
-    .pc_i       (next_instr_addr),
-    .pc_o       (curr_instr_addr)
+    .pc_i       (curr_instr_addr),
+    .pc_o       (next_instr_addr)
 );
 
 Instruction_Memory Instruction_Memory(
